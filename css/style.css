@@ -24,8 +24,6 @@ main {
 }
 
 .square {
-  /* width: calc(100% / 10);
-    height: calc(100% / 10); */
   display: flex;
   justify-content: center;
   align-items: center;
