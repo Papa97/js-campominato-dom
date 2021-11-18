@@ -63,17 +63,19 @@ function play() {
                 const divEl = createSquare();
                 container.appendChild(divEl)
                 divEl.innerHTML = i;
-                
+                console.log('questo e i',i);
                 divEl.addEventListener('click', function (){
                     // this.classList.add('clicked-true');   
                     
                     if (!arrayBomb.includes(i)){
-                        this.classList.add('clicked-true');   
-                    } else {
-                        this.classList.add('clicked-bomb')
+                        this.classList.add('clicked-true'); 
                         
+                    } else {
+                        this.classList.add('clicked-bomb');
+                        alert('BOOM! SEI ESPLOSO, premere F5 per iniziare una nuova partita');
                     }
                 })
+
             }
     
         };
@@ -95,7 +97,6 @@ function play() {
         return node;
     }
 
+
+
 }
-
-
-const lvlSelector = parseInt(document.getElementById('livello').value);
