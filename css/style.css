@@ -14,7 +14,7 @@ main {
   background-color: #7fffd4;
 }
 .container {
-  background-color: red;
+  background-color: yellow;
   margin: 0 auto;
   width: 500px;
   height: 500px;
@@ -34,6 +34,10 @@ main {
 
 .clicked-true {
   background-color: lightblue;
+}
+
+.clicked-bomb {
+  background-color: red;
 }
 
 .container-head {

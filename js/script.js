@@ -3,7 +3,7 @@ let numeroRighe;
 let numeroColonne;
 const diff = 3 ;// parseInt(prompt('inserisci difficolta : 1 facile , 2 medio, 3 difficile'));
 const lvlSelector = parseInt(document.getElementById('livello').value);
-
+const bombNumber = 16;
 
 switch (lvlSelector) {
     case 1: numeroRighe = 100;
@@ -26,6 +26,20 @@ switch (lvlSelector) {
 
 
 // funzioni
+function newBombs (){
+    const arrayBomb = [];
+
+    while (arrayBomb.length < bombNumber){
+        const nRandom = numeroRandom(1, numeroRighe )
+        if(!arrayBomb.includes(nRandom)){
+            arrayBomb.push(nRandom);
+        }
+    }
+    console.log(arrayBomb);
+    return arrayBomb;
+}
+
+newBombs();
 function createSquare(){
     // mi creo il div
     const node = document.createElement('div');
@@ -51,15 +65,29 @@ function creazioneGriglia (valoreSwitchRiga) {
             divEl.innerHTML = i;
             
             divEl.addEventListener('click', function (){
+
                 this.classList.add('clicked-true');
+
+
+                // for (let k = 0; k < bombNumber.length ; k++){
+                //     if (arrayBomb[k] == i){
+                //         this.classList.add('clicked-bomb')
+                //     } else {
+                //     }
+                // }
             })
         }
 
     };
 }
 
+function numeroRandom (min,max){
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
-console.log('valore di lvlSelector',lvlSelector);
+
+
+
 
 const buttonLvl = document.getElementById('play');
 buttonLvl.addEventListener('click',function (){
